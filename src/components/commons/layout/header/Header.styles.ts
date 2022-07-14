@@ -1,4 +1,4 @@
-// 헤더 styles
+// Header Styles
 
 import styled from "@emotion/styled";
 

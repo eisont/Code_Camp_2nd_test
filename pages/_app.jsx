@@ -1,4 +1,4 @@
-// import "../styles/globals.css";
+
 // antd 를 사용하기 위해 전체에 적용을 시켜줍니다.
 import "antd/dist/antd.css";
 import { Global } from "@emotion/react";

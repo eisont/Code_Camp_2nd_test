@@ -10,7 +10,7 @@ import {
   FETCH_USED_ITEM_QUESTIONS,
 } from "./MarketCommentList.queries";
 import * as S from "./MarketCommentList.styles";
-import {FETCH_USER_LOGGED_IN} from "../list/MarketCommentList.queries"
+import {FETCH_USER_LOGGED_IN} from "./MarketCommentList.queries"
 import {getDate} from "../../../../commons/libraries/utils"
 import { notification } from "antd";
 

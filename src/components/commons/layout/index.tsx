@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import LayoutHeader from "./header/Headercontainer";
+import LayoutHeader from "./header/Header.container";
 import { useRouter } from "next/router";
 import LayoutBlack from "./BlackCodeCamp";
 import WatchProduct from "./WatchProduct";
@@ -22,14 +22,14 @@ export default function Layout(props) {
 
   const MainPage = ["/"];
   const LoginPage = ["/login"];
-  const JoinPage = ["/join"];
+  const SignupPage = ["/signup"];
   const MarketWrite = ["/markets/new"];
   const MarketDetail = [`/markets/${router.query.useditemId}`];
   const MarketEdit = [`/markets/${router.query.useditemId}/edit`];
 
   const isMainPage = MainPage.includes(router.asPath);
   const isLoginPage = LoginPage.includes(router.pathname);
-  const isJoinPage = JoinPage.includes(router.asPath);
+  const isSignupPage = SignupPage.includes(router.asPath);
   const isMarketWrite = MarketWrite.includes(router.asPath);
   const isMarketDetail = MarketDetail.includes(router.asPath);
   const isMarketEdit = MarketEdit.includes(router.asPath);
@@ -40,10 +40,10 @@ export default function Layout(props) {
         {!isMainPage && !isMarketDetail && !isMarketWrite && !isMarketEdit && (
           <LayoutBlack />
         )}
-        {!isLoginPage && !isJoinPage && <LayoutHeader />}
+        {!isLoginPage && !isSignupPage && <LayoutHeader />}
         <Fixed>
           {!isLoginPage &&
-            !isJoinPage &&
+            !isSignupPage &&
             !isMarketDetail &&
             !isMarketWrite &&
             !isMarketEdit && <WatchProduct />}

@@ -1,17 +1,12 @@
-import {
-  ApolloClient,
-  ApolloLink,
-  ApolloProvider,
-  InMemoryCache,
-} from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { accessTokenState } from "../../../../src/commons/store";
+import { accessTokenState } from "../../../commons/store";
 import { getAccessToken } from "../../../commons/libraries/getAccessToken";
 import { onError } from "@apollo/client/link/error";
+import { ApolloClient, ApolloLink, ApolloProvider, InMemoryCache } from "@apollo/client";
 
-export default function ApolloSetting(props) {
+export default function ApolloSetting(props: any) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
 
   useEffect(() => {
@@ -27,6 +22,7 @@ export default function ApolloSetting(props) {
         if (err.extensions.code === "UNAUTHENTICATED") {
           getAccessToken().then((newAccessToken) => {
             setAccessToken(newAccessToken);
+            
             operation.setContext({
               headers: {
                 ...operation.getContext().headers,
